@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+//import { ref } from 'vue'
 import LayoutMain from '../layouts/LayoutMain.vue'
 
 export interface Post {
@@ -9,12 +9,12 @@ export interface Post {
     body: string
 }
 
+//const posts = ref<Post[]>([])
 
-const posts = ref<Post[]>([])
+const res = await fetch('https://jsonplaceholder.typicode.com/posts')
+const json =await res.json()
+const posts: Post[] = json    
 
-fetch('https://jsonplaceholder.typicode.com/posts')
-    .then(res => res.json())
-    .then(json => posts.value = json)
 </script>
 
 

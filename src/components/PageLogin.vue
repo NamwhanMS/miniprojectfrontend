@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 //import LayoutMain from '../layouts/LayoutMain.vue'
-//import { isLoggedIn } from '../store/auth'
+import { isLoggedIn } from '../store/auth'
 
 const router = useRouter()
 const message = ref('')
@@ -10,7 +10,7 @@ const message = ref('')
 function onLogin() {
     message.value = 'seccess to login . wait 5s to redirect.'
     setTimeout(() => {
-       // isLoggedIn.value = true
+        isLoggedIn.value = true
         router.push('/')
     }, 5000)
 }

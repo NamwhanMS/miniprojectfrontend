@@ -5,6 +5,6 @@ import LayoutMain from '../layouts/LayoutMain.vue';
 
 <template>
     <LayoutMain>
-        <h1>Register</h1>
+        <h1>Profile</h1>
     </LayoutMain>
 </template>
