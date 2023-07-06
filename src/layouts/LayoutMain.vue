@@ -35,6 +35,8 @@ const navList: NavItem[] =[
       </div>
     </div>
   </nav>
+
+  
    <div class="container my-4">
     <slot></slot>
    </div>
