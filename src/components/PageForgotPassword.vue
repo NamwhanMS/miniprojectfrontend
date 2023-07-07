@@ -33,7 +33,7 @@ function onLogin() {
                         <!-- Email input -->
                         <div class="form-outline mb-4">
                             <label class="form-label" for="form2Example1">Email</label>
-                            <input type="email" id="form2Example1" class="form-control" required/>
+                            <input type="email" placeholder="Enter your email address" id="form2Example1" class="form-control" required/>
     
                         </div>
     

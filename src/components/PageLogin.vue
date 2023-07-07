@@ -55,6 +55,7 @@ function onLogin() {
                     <div class="form-outline mb-4">
                         <button type="button" class="btn btn-login" @click="onLogin">Sign in</button>
                     </div>
+
                     <!-- Register buttons -->
                     <div class="text-center">
                         <p>Don't have an account? <RouterLink to="/register" class=" link-warning link-offset-2 
@@ -74,7 +75,6 @@ function onLogin() {
                                 </button>
                             </div>
                         </div>  
-                        
                     </div>
                 </form>
             </div>
