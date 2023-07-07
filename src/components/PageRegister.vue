@@ -56,7 +56,7 @@ function onLogin() {
 
                     <!-- Register buttons -->
                     <div class="text-center">
-                        <p>Don't have an account? <RouterLink to="/register" class=" link-warning link-offset-2 
+                        <p>Don't have an account? <RouterLink to="/login" class=" link-warning link-offset-2 
                         link-offset-3-hover link-underline link-underline-opacity-0
                         link-underline-opacity-75-hover" >Sign In</RouterLink></p>
                         <p class = text-secondary>or sign in with</p>                        
@@ -78,9 +78,7 @@ function onLogin() {
             </div>
           
         </div>
-
-
-
+        
         <div class="grid-item">
             <img src="../assets/img/login.jpg">
         </div>

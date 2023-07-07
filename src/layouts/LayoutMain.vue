@@ -103,7 +103,7 @@ const navList: NavItem[] =[
   </div>
 
   <div class="mx-auto w-75">
-   <div class="container m-4">
+   <div class="container mt-3">
       <slot></slot>
     </div>
   </div>
