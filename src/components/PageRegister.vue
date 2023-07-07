@@ -14,7 +14,6 @@ function onLogin() {
 
 </script>
 
-
 <template>
 <div class="grid-container">
         <div class="grid-item">

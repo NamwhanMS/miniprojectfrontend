@@ -4,6 +4,7 @@ import PageLogin from '../components/PageLogin.vue'
 import PageRegister from '../components/PageRegister.vue'
 import PageForgotPassword from'../components/PageForgotPassword.vue'
 import PageProfile from '../components/PageProfile.vue'
+import PageSetting from '../components/PageSetting.vue'
 import Page404 from '../components/Page404.vue'
 import PagePost from '../components/PagePost.vue'
 import {isLoggedIn} from '../store/auth'
@@ -15,6 +16,7 @@ const router = createRouter({
         { path: '/login', component: PageLogin },
         { path: '/register', component: PageRegister },
         { path: '/forgotpass', component: PageForgotPassword },
+        { path: '/setting', component: PageSetting },
         {path: '/profile', meta: { onlyAuth: true}, component: PageProfile },
         {path: '/posts/:id', meta: { onlyAuth: true}, component: PagePost },
         { path: '/:pathMatch(.*)*',  component: Page404 }

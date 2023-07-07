@@ -9,8 +9,6 @@ export interface Post {
     body: string
 }
 
-//const posts = ref<Post[]>([])
-
 const res = await fetch('https://jsonplaceholder.typicode.com/posts')
 const json =await res.json()
 const posts: Post[] = json    
