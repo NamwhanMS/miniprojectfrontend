@@ -7,7 +7,6 @@ import LayoutMain from '../layouts/LayoutMain.vue';
     <LayoutMain>
         <h3 class="fw-bold">General Setting</h3>
         <p class="text-secondary">Manage General Setting</p>
-
         <div class="card">
             <div class="card-body">
                 <div class="row">
@@ -15,10 +14,9 @@ import LayoutMain from '../layouts/LayoutMain.vue';
                         <div class="form-group">
                             <label>Title <span class="manitory">*</span></label>
                             <input type="text" placeholder="Enter Title" fdprocessedid="fn5lem" class="form-control mt-1">
-
                         </div>
                     </div>
-                    <div class="col-lg-3 col-sm-6 col-12">
+                    <div class="col-lg-3 col-sm-6 col-12 mb-3">
                         <div class="form-group">
                             <label>Time Zone </label>
                             <select class="select select2-hidden-accessible form-select" data-select2-id="1" tabindex="-1"
@@ -37,7 +35,7 @@ import LayoutMain from '../layouts/LayoutMain.vue';
                                     aria-hidden="true"></span></span>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-sm-6 col-12">
+                    <div class="col-lg-3 col-sm-6 col-12 mb-3">
                         <div class="form-group">
                             <label>Currency <span class="manitory">*</span></label>
                             <select class="select select2-hidden-accessible form-select" data-select2-id="4" tabindex="-1"
@@ -98,12 +96,12 @@ import LayoutMain from '../layouts/LayoutMain.vue';
                     <div class="col-lg-12">
                         <div class="form-group">
                             <label> Product Image</label>
-                            
-                                <div class="mb-3">
-                                    
-                                    <input class="form-control" type="file" id="formFile">
-                                </div>
-                            
+
+                            <div class="mb-3">
+
+                                <input class="form-control" type="file" id="formFile">
+                            </div>
+
                         </div>
                     </div>
                     <div class="row">

@@ -7,11 +7,17 @@ import { isLoggedIn } from '../store/auth'
 const router = useRouter()
 //const message = ref('')
 
+
 function onLogin() {
     isLoggedIn.value = true
+
     router.push('/')  
 }
+
+
 </script>
+
+
 
 
 <template>
@@ -35,13 +41,14 @@ function onLogin() {
                     <div class="form-outline mb-4">
                         <label class="form-label" for="form2Example1">Email</label>
                         <input type="email" placeholder="Enter your email address" id="form2Example1" class="form-control" required/>
-
+                        <!--<input v-model="inputlog.email" placeholder="Enter your email address" class="form-control" type="email" required>-->
                     </div>
 
                     <!-- Password input -->
                     <div class="form-outline mb-2">
                         <label class="form-label" for="form2Example2">Password</label>
-                        <input type="password"  placeholder="Enter your password" id="form2Example2" class="form-control" required/>
+                        <input type="password" placeholder="Enter your password" id="form2Example1" class="form-control" required/>
+                        <!--<input v-model="inputlog.password" placeholder="Enter your password" class="form-control" type="password" required>-->
                     </div>
 
                     <!--Forgot password-->

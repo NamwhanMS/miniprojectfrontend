@@ -9,6 +9,7 @@ import Page404 from '../components/Page404.vue'
 import PagePost from '../components/PagePost.vue'
 import {isLoggedIn} from '../store/auth'
 
+
 const router = createRouter({
     history: createWebHistory(),
     routes: [
@@ -16,7 +17,7 @@ const router = createRouter({
         { path: '/login', component: PageLogin },
         { path: '/register', component: PageRegister },
         { path: '/forgotpass', component: PageForgotPassword },
-        { path: '/setting', component: PageSetting },
+        { path: '/setting', meta: { onlyAuth: true},component: PageSetting },
         {path: '/profile', meta: { onlyAuth: true}, component: PageProfile },
         {path: '/posts/:id', meta: { onlyAuth: true}, component: PagePost },
         { path: '/:pathMatch(.*)*',  component: Page404 }

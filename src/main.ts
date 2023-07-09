@@ -5,6 +5,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.css'
 import routes from './plugins/routes'
 import { Popover } from 'bootstrap';
 
+
 createApp(App)
     .use(routes)
     .mount('#app')

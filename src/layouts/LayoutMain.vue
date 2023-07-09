@@ -1,4 +1,5 @@
 <script setup lang="ts">
+
 import { isLoggedIn } from '../store/auth';
 
 interface NavItem {
@@ -14,6 +15,8 @@ const navList: NavItem[] =[
   //{ label: 'Register', to: '/register', show: !isLoggedIn.value },
 
 ]
+
+
 </script>
 
 
@@ -54,12 +57,12 @@ const navList: NavItem[] =[
                 <li><hr class="dropdown-divider"></li>
                 <li><RouterLink class="dropdown-item" to="/login">Log out</RouterLink></li>
               </ul>
-        </li>     
+            </li>           
       </ul>
     </div>
   </div>
 </nav>
-
+ <!--sidebar-->
  <div class="d-flex flex-row">
 
   <div class="mx-auto w-15">
@@ -70,7 +73,7 @@ const navList: NavItem[] =[
       <RouterLink class="nav-link" to="/">Dashboard</RouterLink>
      </div>  
      
-     <div class="border-top my-3"></div>
+     <div class="border-top my-2"></div>
 
      <p>Management</p> 
      <div class="ms-3 p-1 ">
@@ -82,7 +85,7 @@ const navList: NavItem[] =[
      
     <ul class="list-unstyled ps-0">
       
-      <li class="border-top my-3"></li>
+      <li class="border-top my-2"></li>
       <li class="mb-1">
         <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
           Account
