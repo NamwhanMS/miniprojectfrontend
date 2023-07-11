@@ -25,7 +25,7 @@ const router = createRouter({
     ]
 })
 
-router.beforeEach((to, from) => {
+router.beforeEach((to) => {
     if (to.meta.onlyAuth && !isLoggedIn.value){
         router.replace('/')
         return false

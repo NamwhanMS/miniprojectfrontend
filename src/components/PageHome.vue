@@ -5,7 +5,6 @@ import LayoutMain from '../layouts/LayoutMain.vue'
 
 </script>
 
-
 <template>
   <LayoutMain>
     <div class="container px-4 py-4" id="featured-3">
