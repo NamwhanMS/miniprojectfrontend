@@ -2,27 +2,6 @@
 //import { ref } from 'vue'
 import LayoutMain from '../layouts/LayoutMain.vue'
 
-//export interface Post {
-   // userId: number
-    //id: number
-    //title: string
-    //body: string
-//}
-
-//const res = await fetch('https://jsonplaceholder.typicode.com/posts')
-//const json =await res.json()
-//const posts: Post[] = json
-
-
-
-//<ul>
-        //    <li v-for="post of posts" :key="post.id">
-         //       <RouterLink :to="`/posts/${post.id}`">
-         //           ({{ post.id }}) {{ post.title }}
-        //        </RouterLink>
-        //    </li>
-      //  </ul>
-
 
 </script>
 
@@ -71,5 +50,5 @@ import LayoutMain from '../layouts/LayoutMain.vue'
     </div>
   </div>
 
-
-</LayoutMain></template>
+  </LayoutMain>
+</template>

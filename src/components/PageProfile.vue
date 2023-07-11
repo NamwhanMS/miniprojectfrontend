@@ -1,5 +1,7 @@
 <script setup lang="ts">
+//import { ref } from 'vue'
 import LayoutMain from '../layouts/LayoutMain.vue';
+import userStore from '../store/user'; 
 </script>
 
 
@@ -16,29 +18,24 @@ import LayoutMain from '../layouts/LayoutMain.vue';
                     <div class="profile-top">
                         <div class="profile-content">
                             <div class="profile-contentname">
-                                <h2>William Castillo</h2> 
+                                
+                                <h2>{{ userStore.state.name }}</h2> 
                                 <h4>Updates Your Personal Details.</h4>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="row mt-3">
-                    <div class="col-lg-6 col-sm-12 ">
+                    <div class="col-lg-12 col-sm-12 ">
                         <div class="form-group">
-                            <label>First Name</label>
-                            <input type="text" placeholder="William" fdprocessedid="u9qzsj" class="form-control">
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-sm-12">
-                        <div class="form-group">
-                            <label>Last Name</label>
-                            <input type="text" placeholder="Castilo" fdprocessedid="fbrjy" class="form-control">
+                            <label>Full Name</label>
+                            <input type="text" placeholder="Fullname" fdprocessedid="u9qzsj" class="form-control">
                         </div>
                     </div>
                     <div class="col-lg-6 col-sm-12">
                         <div class="form-group">
                             <label>Email</label>
-                            <input type="text" placeholder="william@example.com" fdprocessedid="ov6n5e" class="form-control">
+                            <input type="text" placeholder="email@example.com" fdprocessedid="ov6n5e" class="form-control">
                         </div>
                     </div>
                     <div class="col-lg-6 col-sm-12">
