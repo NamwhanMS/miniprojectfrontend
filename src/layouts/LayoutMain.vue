@@ -1,6 +1,8 @@
 <script setup lang="ts">
 
 import { isLoggedIn } from '../store/auth';
+import userStore from '../store/user';
+
 
 interface NavItem {
   label: string
@@ -55,7 +57,8 @@ const navList: NavItem[] =[
                 <li><RouterLink class="dropdown-item" to="/profile">My Profile</RouterLink></li>
                 <li><RouterLink class="dropdown-item" to="/setting">Setting</RouterLink></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><RouterLink class="dropdown-item" to="/login">Log out</RouterLink></li>
+                <li><RouterLink class="dropdown-item" to="/login" @click="userStore.logout()">Log out</RouterLink></li>
+                
               </ul>
             </li>           
       </ul>
@@ -95,7 +98,7 @@ const navList: NavItem[] =[
             <li><RouterLink to="/register" class="link-dark rounded">New...</RouterLink></li>
             <li><RouterLink to="/profile" class="link-dark rounded">Profile</RouterLink></li>
             <li><RouterLink to="/setting" class="link-dark rounded">Settings</RouterLink></li>
-            <li><RouterLink to="/login" class="link-dark rounded">Sign out</RouterLink></li>
+            <li><RouterLink to="/login" class="link-dark rounded" @click="userStore.logout()">Sign out</RouterLink></li>
           </ul>
         </div>
       </li>

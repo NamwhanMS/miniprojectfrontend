@@ -1,33 +1,40 @@
 <script setup lang="ts">
+import axios from "axios";
 //import { ref } from 'vue'
 import { useRouter } from "vue-router";
 //import LayoutMain from '../layouts/LayoutMain.vue'
-//import { isLoggedIn } from "../store/auth";
+import { isLoggedIn } from "../store/auth";
 
 const router = useRouter();
 //const message = ref('')
 
-const user = ({
-  name: '',
-  email: '',
-  password:''
+const user = {
+  name: "",
+  email: "",
+  password: "",
+};
 
-})
-
-
-function onRegister() {
-  //isLoggedIn.value = false;
-  router.push("/");
+async function onRegister() {
+  let result = await axios.post("http://localhost:3000/users", {
+    name: user.name,
+    email: user.email,
+    password: user.password,
+  });
+  console.log(result);
+  if (result.status == 201) {
+    alert("sign up done");
+    localStorage.setItem("user-info", JSON.stringify(result.data));
+  }
+  isLoggedIn.value = true;
+  router.push("/login");
 }
-
-
 </script>
 
 <template>
   <div class="grid-container">
     <div class="grid-item">
       <div class="container mx-auto p-3">
-        <form @submit.prevent="onRegister" class="container pt-4" >
+        <form class="container pt-4">
           <!-- logo -->
           <div class="w-auto pt-5">
             <img
@@ -84,7 +91,7 @@ function onRegister() {
 
           <!-- Submit button -->
           <div class="form-outline mb-4">
-            <button type="button" class="btn btn-login">
+            <button type="button" class="btn btn-login" @click="onRegister">
               Sign up
             </button>
           </div>

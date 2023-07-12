@@ -3,7 +3,7 @@ import { reactive } from "vue";
 //import { ref } from 'vue'
 //import { useRouter } from 'vue-router'
 //import LayoutMain from '../layouts/LayoutMain.vue'
-import { isLoggedIn } from '../store/auth'
+import { isLoggedIn } from "../store/auth";
 import userStore from "../store/user";
 import router from "../plugins/routes";
 
@@ -22,16 +22,12 @@ const form = reactive({
 //}
 
 async function onLogin() {
-  // alert(JSON.stringify(form))
-  // isLoggedIn.value = true
-  //router.push('/')
-
   const loginsubmit = await userStore.login(form.email, form.password);
   if (loginsubmit) {
-    router.push('/')
+    router.push("/");
     form.email = "";
     form.password = "";
-    isLoggedIn.value = true
+    isLoggedIn.value = true;
   }
 
   // return { form, userStore, onLogin }
