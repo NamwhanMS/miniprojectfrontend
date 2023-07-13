@@ -17,3 +17,4 @@ export async function login(email: string, password: string) {
     return usersJson.find((s) => s.password === password && s.email === email);
   }
 }
+

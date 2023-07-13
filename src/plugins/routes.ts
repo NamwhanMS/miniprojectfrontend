@@ -1,6 +1,7 @@
 import  { createRouter, createWebHistory} from 'vue-router'
 import PageHome from '../components/PageHome.vue'
 import PageLogin from '../components/PageLogin.vue'
+import LoginPage from '../components/LoginPage.vue'
 import PageRegister from '../components/PageRegister.vue'
 import PageForgotPassword from'../components/PageForgotPassword.vue'
 import PageProfile from '../components/PageProfile.vue'
@@ -15,6 +16,7 @@ const router = createRouter({
     routes: [
         { path: '/', component: PageHome },
         { path: '/login', component: PageLogin },
+        { path: '/loginpage', component: LoginPage },
         { path: '/register', component: PageRegister },
         { path: '/forgotpass', component: PageForgotPassword },
         { path: '/setting', meta: { onlyAuth: true},component: PageSetting },

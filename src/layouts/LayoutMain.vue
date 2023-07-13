@@ -1,22 +1,28 @@
 <script setup lang="ts">
-
-import { isLoggedIn } from '../store/auth';
+import { useRouter } from "vue-router";
+//import { isLoggedIn } from '../store/auth';
 import userStore from '../store/user';
 
+const router = useRouter();
 
-interface NavItem {
-  label: string
-  to: string
-  show: boolean
-}
+//interface NavItem {
+ // label: string
+ // to: string
+ // show: boolean
+//}
 
-const navList: NavItem[] =[
+//const navList: NavItem[] =[
  // { label: 'Home', to: '/', show:true },
-  { label: 'Profile', to: '/profile', show: isLoggedIn.value},
-  { label: 'Login', to: '/login', show: !isLoggedIn.value},
+ // { label: 'Profile', to: '/profile', show: isLoggedIn.value},
+ // { label: 'Login', to: '/login', show: !isLoggedIn.value},
   //{ label: 'Register', to: '/register', show: !isLoggedIn.value },
 
-]
+//]
+
+function logout(){
+  localStorage.clear();
+  router.push("/loginpage");
+}
 
 
 </script>
@@ -57,7 +63,7 @@ const navList: NavItem[] =[
                 <li><RouterLink class="dropdown-item" to="/profile">My Profile</RouterLink></li>
                 <li><RouterLink class="dropdown-item" to="/setting">Setting</RouterLink></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><RouterLink class="dropdown-item" to="/login" @click="userStore.logout()">Log out</RouterLink></li>
+                <li><a class="dropdown-item" href="#" @click="logout">Log out</a></li>
                 
               </ul>
             </li>           
@@ -93,12 +99,12 @@ const navList: NavItem[] =[
         <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
           Account
         </button>
-        <div class="collapse" id="account-collapse" style="">
+        <div class="collapse" id="account-collapse" style="text-decoration: none;">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             <li><RouterLink to="/register" class="link-dark rounded">New...</RouterLink></li>
             <li><RouterLink to="/profile" class="link-dark rounded">Profile</RouterLink></li>
             <li><RouterLink to="/setting" class="link-dark rounded">Settings</RouterLink></li>
-            <li><RouterLink to="/login" class="link-dark rounded" @click="userStore.logout()">Sign out</RouterLink></li>
+            <li><RouterLink to="/loginpage" class="link-dark rounded" @click="userStore.logout()">Sign out</RouterLink></li>
           </ul>
         </div>
       </li>

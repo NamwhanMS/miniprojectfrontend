@@ -1,6 +1,18 @@
 <script setup lang="ts">
-//import { ref } from 'vue'
+import { onMounted } from 'vue'
 import LayoutMain from '../layouts/LayoutMain.vue'
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+
+onMounted(() => {
+  let user=localStorage.getItem('user-info');
+  if(!user)
+  {
+    router.push("/loginpage");
+  }
+  
+})
 
 
 </script>

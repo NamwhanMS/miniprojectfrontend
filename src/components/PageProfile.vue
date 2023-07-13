@@ -1,7 +1,36 @@
 <script setup lang="ts">
-//import { ref } from 'vue'
+import { ref } from 'vue'
 import LayoutMain from "../layouts/LayoutMain.vue";
 import userStore from "../store/user";
+import axios from "axios";
+
+interface Account {
+  id: number
+  name: string
+  email: string
+  password: string
+}
+
+
+const accounts = ref<Account[]>([])
+
+//fetch("/users.json")
+ // .then(res => res.json())
+  //.then(json =>accounts.value=json)
+  
+  async function getAccount() {
+  const request = await fetch("/users.json");
+  const response = await request.json();
+  console.log(response);
+  if (response) {
+    const usersJson: Account = response.users;
+    console.log(usersJson);
+  }
+}
+
+
+
+
 
 const user = {
   name: "",
@@ -10,17 +39,30 @@ const user = {
   repeatPassword: "",
 };
 
-function onSubmit() {
+async function onSubmit() {
   if (user.password === user.repeatPassword) {
     console.log(user);
+    let result = await axios.put("http://localhost:3000/users/:id", {
+    name: user.name,
+    email: user.email,
+    password: user.password,
+ });
+  console.log(result);
   } else {
     alert("Password not match");
   }
 }
+
+
 </script>
 
 <template>
   <LayoutMain>
+    <li v-for="account of accounts" :key="account.id">
+      <RouterLink :to="`/profile/${account.id}`">({{ account.id }} {{ account.name }})</RouterLink>
+    </li>
+    <pre>{{ accounts }}</pre>
+    <button type="button" class="btn btn-primary" @click="getAccount">getAccount</button>
     <h3 class="fw-bold">Profile</h3>
     <p class="text-secondary">User Profile</p>
 
@@ -31,7 +73,10 @@ function onSubmit() {
           <div class="profile-top">
             <div class="profile-content">
               <div class="profile-contentname">
+               
+                <h2 class="fw-bold">{{ userStore.state.email }}</h2>
                 <h2 class="fw-bold">{{ userStore.state.name }}</h2>
+               
                 <h4>Updates Your Personal Details.</h4>
               </div>
             </div>
