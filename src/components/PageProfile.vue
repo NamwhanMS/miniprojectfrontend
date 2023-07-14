@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import LayoutMain from "../layouts/LayoutMain.vue";
 import userStore from "../store/user";
 import axios from "axios";
+//import { useRouter } from "vue-router";
 
 interface Account {
   id: number
@@ -10,9 +10,6 @@ interface Account {
   email: string
   password: string
 }
-
-
-const accounts = ref<Account[]>([])
 
 //fetch("/users.json")
  // .then(res => res.json())
@@ -28,11 +25,7 @@ const accounts = ref<Account[]>([])
   }
 }
 
-
-
-
-
-const user = {
+const useraccount = {
   name: "",
   email: "",
   password: "",
@@ -40,12 +33,12 @@ const user = {
 };
 
 async function onSubmit() {
-  if (user.password === user.repeatPassword) {
-    console.log(user);
-    let result = await axios.put("http://localhost:3000/users/:id", {
-    name: user.name,
-    email: user.email,
-    password: user.password,
+  if (useraccount.password === useraccount.repeatPassword) {
+    console.log(useraccount);
+    let result = await axios.put("http://localhost:3000/users", {
+    name: useraccount.name,
+    email: useraccount.email,
+    password: useraccount.password,
  });
   console.log(result);
   } else {
@@ -54,15 +47,13 @@ async function onSubmit() {
 }
 
 
+
+
 </script>
 
 <template>
   <LayoutMain>
-    <li v-for="account of accounts" :key="account.id">
-      <RouterLink :to="`/profile/${account.id}`">({{ account.id }} {{ account.name }})</RouterLink>
-    </li>
-    <pre>{{ accounts }}</pre>
-    <button type="button" class="btn btn-primary" @click="getAccount">getAccount</button>
+  
     <h3 class="fw-bold">Profile</h3>
     <p class="text-secondary">User Profile</p>
 
@@ -87,7 +78,7 @@ async function onSubmit() {
             <div class="form-group">
               <label>Full Name</label>
               <input
-                v-model="user.name"
+                v-model="useraccount.name"
                 type="text"
                 placeholder="fullname"
                 fdprocessedid="u9qzsj"
@@ -99,7 +90,7 @@ async function onSubmit() {
             <div class="form-group">
               <label>Email</label>
               <input
-                v-model="user.email"
+                v-model="useraccount.email"
                 type="text"
                 placeholder="email@example.com"
                 fdprocessedid="ov6n5e"
@@ -111,7 +102,7 @@ async function onSubmit() {
             <div class="form-group">
               <label>Password</label>
               <input
-                v-model="user.password"
+                v-model="useraccount.password"
                 type="text"
                 placeholder="password"
                 fdprocessedid="cipgr"
@@ -123,7 +114,7 @@ async function onSubmit() {
             <div class="form-group">
               <label>Repeate Password</label>
               <input
-                v-model="user.repeatPassword"
+                v-model="useraccount.repeatPassword"
                 type="text"
                 placeholder="Repeate password"
                 fdprocessedid="kw5f8w"

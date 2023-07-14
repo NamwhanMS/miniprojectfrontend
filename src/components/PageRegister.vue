@@ -32,7 +32,7 @@ onMounted(() => {
   let user=localStorage.getItem('user-info');
   if(user)
   {
-    router.push("/");
+    router.push("/login");
   }
   
 })
@@ -110,7 +110,7 @@ onMounted(() => {
             <p>
               Don't have an account?
               <RouterLink
-                to="/loginpage"
+                to="/login"
                 class="link-warning link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
                 >Sign In</RouterLink
               >

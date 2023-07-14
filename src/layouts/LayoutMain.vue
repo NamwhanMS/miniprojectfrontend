@@ -21,7 +21,7 @@ const router = useRouter();
 
 function logout(){
   localStorage.clear();
-  router.push("/loginpage");
+  router.push("/login");
 }
 
 

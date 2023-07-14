@@ -48,5 +48,19 @@
       "password": "fuu123",
       "id": 8
     }
+  ],
+  "students": [
+    {
+      "id": 1,
+      "name": "stu 1",
+      "address": "bkk",
+      "contact": "0000000000"
+    },
+    {
+      "name": "stu 2",
+      "address": "bkk",
+      "contact": "2222222222",
+      "id": 2
+    }
   ]
 }
